@@ -1,0 +1,21 @@
+# Tasks
+
+- [x] Inspect scaffold, detect npm lockfile, Next 16, Tailwind v4, Drizzle
+- [x] Load Stop Slop and GSAP skills; record that Taste Skill and UI UX Pro Max repos 404
+- [x] Brief, experience map, sitemap, design system, motion system
+- [x] Design tokens and global styles
+- [x] Schema, deterministic seed, query layer, startup seeding
+- [x] Motion primitives: smooth scroll, reveal, masked lines, stagger, count-up, scroll progress
+- [x] UI primitives: button with ripple and press, panel, spec table, status dot, eyebrow, tags
+- [x] Graphics: lane chart, sparkline, chain-of-custody diagram, band glyph
+- [x] Header with scroll state and Radix drawer, footer with subscribe form
+- [x] Home: hero, ledger strip, failure narrative, capabilities, lane reader, evidence, scenarios, close
+- [x] Platform page with sticky section index
+- [x] Lanes explorer with filters, sort, search, empty state
+- [x] Lane detail with chart, excursion log, custody timeline
+- [x] Pricing comparison and FAQ accordion
+- [x] Field notes index and article renderer
+- [x] Contact form, API routes, rate limiting, live validation
+- [x] Privacy page, sitemap, robots, metadata, JSON-LD
+- [x] loading / error / not-found states
+- [x] typegen, tsc, production build, build-and-start healthcheck
