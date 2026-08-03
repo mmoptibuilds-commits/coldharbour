@@ -1,23 +1,40 @@
 <div align="center">
-  <img src="./public/icon.svg" alt="Coldharbour mark" width="72" height="72" />
 
-  <h1>Coldharbour</h1>
+<img src="./public/icon.svg" alt="Coldharbour mark" width="84" height="84" />
 
-  <p><strong>Temperature evidence for clinical shipments.</strong></p>
+# Coldharbour
 
-  <p>
-    An evidence-first cold-chain monitoring experience for clinical supply teams,
-    built around live telemetry, human escalation, and inspection-ready release records.
-  </p>
+**Temperature evidence for clinical shipments.**
 
-  <p>
-    <img alt="Next.js 16" src="https://img.shields.io/badge/Next.js-16-111111?style=flat-square&logo=nextdotjs" />
-    <img alt="React 19" src="https://img.shields.io/badge/React-19-111111?style=flat-square&logo=react" />
-    <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5.9-111111?style=flat-square&logo=typescript" />
-    <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind_CSS-4-111111?style=flat-square&logo=tailwindcss" />
-    <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-Drizzle-111111?style=flat-square&logo=postgresql" />
-  </p>
+An evidence-first cold-chain monitoring experience for clinical supply teams, built around live telemetry, human escalation, and inspection-ready release records.
+
+<p>
+  <a href="https://coldharbour-mm.vercel.app">
+    <img src="https://img.shields.io/badge/Live_Demo-coldharbour--mm.vercel.app-EA5A2A?style=for-the-badge&logo=vercel&logoColor=white" alt="Live demo" />
+  </a>
+</p>
+
+<p>
+  <img alt="Next.js 16" src="https://img.shields.io/badge/Next.js-16.2.6-111111?style=flat-square&logo=nextdotjs" />
+  <img alt="React 19" src="https://img.shields.io/badge/React-19.2.6-111111?style=flat-square&logo=react" />
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5.9-111111?style=flat-square&logo=typescript" />
+  <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind_CSS-4.1-111111?style=flat-square&logo=tailwindcss" />
+  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-Drizzle-111111?style=flat-square&logo=postgresql" />
+  <img alt="Vercel" src="https://img.shields.io/badge/Deployed_on-Vercel-111111?style=flat-square&logo=vercel" />
+</p>
+
 </div>
+
+---
+
+## Live deployment
+
+| Destination | URL |
+| --- | --- |
+| Website | [coldharbour-mm.vercel.app](https://coldharbour-mm.vercel.app) |
+| Lane explorer | [coldharbour-mm.vercel.app/lanes](https://coldharbour-mm.vercel.app/lanes) |
+| Field notes | [coldharbour-mm.vercel.app/field-notes](https://coldharbour-mm.vercel.app/field-notes) |
+| Health check | [coldharbour-mm.vercel.app/api/health](https://coldharbour-mm.vercel.app/api/health) |
 
 ---
 
@@ -27,36 +44,34 @@ Coldharbour is a full-stack product website and operational data explorer for a 
 
 The experience follows a shipment from pack-out to QA release. It records payload temperature, surfaces excursions, routes alerts to a named reviewer, and assembles the evidence required for a release decision.
 
-The visual direction is intentionally unlike a conventional SaaS landing page. It borrows from laboratory chart recorders, freight manifests, validation paperwork, and depot instrumentation: near-black surfaces, fine grid lines, dense telemetry, restrained typography, and a single ember-orange action colour.
+The visual direction avoids the usual SaaS-dashboard look. It draws from laboratory chart recorders, freight manifests, validation paperwork, depot instrumentation, and chain-of-custody records: near-black surfaces, fine grid lines, dense telemetry, restrained typography, and a single ember-orange action colour.
 
 > [!IMPORTANT]
-> Coldharbour is a demonstration build. All lanes, readings, companies, field notes, outcomes, and operational statistics are synthetic.
+> Coldharbour is a demonstration project. All lanes, companies, readings, field notes, outcomes, and operational statistics are synthetic.
 
 ## Experience highlights
 
 - Live, scrubbable temperature traces with payload and ambient readings
-- Searchable and filterable shipment-lane explorer
+- Searchable, sortable, and filterable shipment-lane explorer
 - Lane detail pages with excursion logs and custody timelines
-- Evidence-pack breakdown for QA and inspection workflows
-- Product platform, pricing, field notes, privacy, and contact routes
+- Evidence-pack breakdowns for QA and inspection workflows
+- Platform, pricing, field notes, privacy, and contact routes
 - Walkthrough and newsletter forms with shared client/server validation
-- Deterministic PostgreSQL seed data for repeatable demonstrations
-- Smooth scrolling, scroll-driven narratives, masked text, count-ups, and micro-interactions
-- Keyboard-first interactions and a complete reduced-motion alternative
+- PostgreSQL-backed data with deterministic demonstration records
+- Smooth scrolling, scroll narratives, masked text, count-ups, and micro-interactions
+- Keyboard-first interactions and reduced-motion alternatives
 - Dynamic metadata, sitemap, robots rules, JSON-LD, loading states, and error boundaries
+- Responsive layouts for phones, tablets, laptops, and large desktop displays
 
 ## Product flow
 
-```text
-Probe reading every 60 seconds
-            ↓
-Excursion detection
-            ↓
-Named reviewer escalation
-            ↓
-Acknowledgement and response trail
-            ↓
-Evidence pack and QA release decision
+```mermaid
+flowchart TD
+    A[Probe reading every 60 seconds] --> B[Excursion detection]
+    B --> C[Named reviewer escalation]
+    C --> D[Acknowledgement and response trail]
+    D --> E[Evidence pack]
+    E --> F[QA release decision]
 ```
 
 ## Routes
@@ -86,13 +101,15 @@ Evidence pack and QA release decision
 | Motion | GSAP, ScrollTrigger, `@gsap/react`, Lenis, Motion |
 | Data | PostgreSQL, Drizzle ORM, Drizzle Kit |
 | Forms | React Hook Form, Zod |
-| Interface primitives | Radix Dialog and Accordion |
+| UI primitives | Radix Dialog and Accordion |
 | Carousel | Embla Carousel |
 | Fonts | Archivo Variable and JetBrains Mono through `next/font` |
+| Deployment | Vercel |
+| Database hosting | Managed PostgreSQL-compatible service such as Neon |
 
 ## Design system
 
-Coldharbour uses a deliberate **60 / 30 / 10** colour hierarchy:
+Coldharbour uses a deliberate **60 / 30 / 10** visual hierarchy:
 
 - **60%** near-black canvas and base surfaces
 - **30%** raised surfaces, borders, and muted information
@@ -100,7 +117,7 @@ Coldharbour uses a deliberate **60 / 30 / 10** colour hierarchy:
 
 Telemetry uses separate semantic signal colours for in-band, watch, and error states. Status is never communicated by colour alone.
 
-The design system, motion rules, page-specific deviations, and implementation decisions are documented in:
+Detailed design and implementation notes live in:
 
 - [`design-system/MASTER.md`](./design-system/MASTER.md)
 - [`design-system/pages/home.md`](./design-system/pages/home.md)
@@ -119,19 +136,20 @@ The design system, motion rules, page-specific deviations, and implementation de
 ├── src/
 │   ├── app/                   # App Router pages, metadata, APIs, and states
 │   ├── components/
-│   │   ├── forms/             # Validated forms and fields
+│   │   ├── forms/             # Validated forms and form fields
 │   │   ├── graphics/          # Telemetry chart, marks, and diagrams
 │   │   ├── lanes/             # Lane explorer
 │   │   ├── layout/            # Header, footer, and section navigation
-│   │   ├── motion/            # Smooth scroll and animation primitives
+│   │   ├── motion/            # Smooth-scroll and animation primitives
 │   │   ├── notes/             # Field-note renderer
 │   │   ├── sections/          # Product-page sections
 │   │   └── ui/                # Reusable interface primitives
-│   ├── db/                    # Schema, query layer, and deterministic seed
-│   └── lib/                   # Site data, validation, GSAP, rate limit, helpers
-├── drizzle.config.json
+│   ├── db/                    # Schema, queries, and deterministic seed logic
+│   └── lib/                   # Site data, validation, GSAP, rate limit, and helpers
+├── drizzle.config.ts
 ├── next.config.ts
 ├── package.json
+├── postcss.config.mjs
 └── tsconfig.json
 ```
 
@@ -139,14 +157,14 @@ The design system, motion rules, page-specific deviations, and implementation de
 
 ### Prerequisites
 
-- Node.js 22 or a compatible newer release
+- Node.js 22 or newer
 - npm
-- PostgreSQL
+- A reachable PostgreSQL database
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/coldharbour.git
+git clone https://github.com/mmoptibuilds-commits/coldharbour.git
 cd coldharbour
 ```
 
@@ -156,44 +174,59 @@ cd coldharbour
 npm install
 ```
 
-### 3. Configure the environment
+### 3. Configure environment variables
 
 Create `.env.local` in the project root:
 
 ```env
-DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:5432/app_db
+DATABASE_URL=postgresql://USERNAME:PASSWORD@HOST/DATABASE?sslmode=require
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
-Never commit `.env.local` or real database credentials.
+Never commit `.env`, `.env.local`, database credentials, API keys, or tokens.
 
-### 4. Create the database schema
-
-The included `drizzle.config.json` currently points to a local PostgreSQL database. Update its connection string when necessary, then run:
+### 4. Apply the database schema
 
 ```bash
-npx drizzle-kit push --config=drizzle.config.json
+npm run db:push
 ```
 
-When the application starts against an empty schema, `src/instrumentation.ts` invokes the deterministic seed process and fills the database with sample lanes, readings, excursions, and field notes.
+The project uses [`drizzle.config.ts`](./drizzle.config.ts), which reads `DATABASE_URL` from the environment.
 
-### 5. Start the development server
+### 5. Seed a fresh database
+
+The repository includes deterministic seed logic in [`src/db/seed.ts`](./src/db/seed.ts).
+
+A fresh database must be seeded once through a trusted server-side runner or a temporary protected route. Do not expose an unauthenticated seed endpoint in production.
+
+The live deployment is already seeded.
+
+### 6. Start the development server
 
 ```bash
 npm run dev
 ```
 
-Open `http://localhost:3000`.
+Open:
+
+```text
+http://localhost:3000
+```
+
+> [!NOTE]
+> The project uses Webpack for local development and production builds. This also keeps development compatible with Android/Termux, where Turbopack native bindings are unavailable.
 
 ## Available scripts
 
 | Command | Purpose |
 | --- | --- |
-| `npm run dev` | Start the Next.js development server |
-| `npm run build` | Create a production build |
+| `npm run dev` | Start the Next.js development server with Webpack |
+| `npm run build` | Create a production build with Webpack |
 | `npm start` | Start the production server |
 | `npm run lint` | Run ESLint across the project |
 | `npm run typecheck` | Run TypeScript without emitting files |
+| `npm run db:push` | Apply the Drizzle schema to PostgreSQL |
+| `npm run db:studio` | Open Drizzle Studio |
 
 ## Verification
 
@@ -205,7 +238,7 @@ npm run typecheck
 npm run build
 ```
 
-After starting the production server, verify the health endpoint:
+After starting the application, verify:
 
 ```text
 GET /api/health
@@ -221,18 +254,25 @@ A healthy application returns:
 
 ## Deployment
 
-Coldharbour requires a Node.js deployment target and a reachable PostgreSQL database.
+Coldharbour requires a Node.js deployment target and a reachable PostgreSQL database. It must not be deployed as a plain static folder.
 
-For Vercel or Netlify:
+### Vercel
 
 1. Push the repository to GitHub.
-2. Import the repository into the hosting provider.
-3. Add `DATABASE_URL` and `NEXT_PUBLIC_SITE_URL` as environment variables.
-4. Push the Drizzle schema to the production database.
-5. Deploy using the standard `npm run build` command.
+2. Import `mmoptibuilds-commits/coldharbour` into Vercel.
+3. Keep the framework preset set to **Next.js**.
+4. Add the required environment variables.
+5. Deploy with the default install command and `npm run build`.
 6. Confirm that `/api/health` returns `{ "ok": true }`.
 
-Do not deploy this project as a plain static folder. It contains server-rendered pages, API routes, database queries, and form handlers.
+### Required environment variables
+
+| Variable | Sensitive | Example |
+| --- | --- | --- |
+| `DATABASE_URL` | Yes | PostgreSQL connection string |
+| `NEXT_PUBLIC_SITE_URL` | No | `https://coldharbour-mm.vercel.app` |
+
+`NEXT_PUBLIC_SITE_URL` is intentionally public because Next.js may embed variables prefixed with `NEXT_PUBLIC_` into browser-facing code.
 
 ## Accessibility and motion
 
@@ -244,11 +284,11 @@ The interface targets WCAG 2.2 AA and includes:
 - Status labels in addition to colour
 - Live regions for form feedback
 - Reduced-motion handling as an alternative experience
-- Responsive layouts tested from narrow phones to large desktop displays
+- Responsive layouts from narrow phones to large displays
 
 ## Data model
 
-The PostgreSQL schema contains six tables:
+The PostgreSQL schema contains six main tables:
 
 - `lanes`
 - `readings`
@@ -257,21 +297,44 @@ The PostgreSQL schema contains six tables:
 - `leads`
 - `subscribers`
 
-The seed process is deterministic, so repeated fresh installations produce the same demonstration data and chart shapes.
+The seed process is deterministic, allowing repeatable demonstration data and chart shapes across fresh environments.
 
 ## Repository metadata
 
-**Suggested description**
+**Description**
 
 > Evidence-first cold-chain monitoring for clinical shipments, built with Next.js, PostgreSQL, Drizzle, GSAP, Lenis, and Tailwind CSS.
 
 **Suggested topics**
 
 ```text
-nextjs typescript react postgresql drizzle-orm tailwindcss gsap lenis
-cold-chain clinical-trials data-visualization accessibility
+nextjs
+typescript
+react
+postgresql
+drizzle-orm
+tailwindcss
+gsap
+lenis
+cold-chain
+clinical-trials
+data-visualization
+accessibility
+vercel
 ```
 
 ## License
 
-No licence has been selected yet. Add a `LICENSE` file before publishing the project for reuse or accepting external contributions.
+No licence has been selected. Add a `LICENSE` file before allowing reuse, redistribution, or external contributions.
+
+---
+
+<div align="center">
+
+Built as a full-stack product-design and engineering demonstration.
+
+[Live site](https://coldharbour-mm.vercel.app) ·
+[Lane explorer](https://coldharbour-mm.vercel.app/lanes) ·
+[Field notes](https://coldharbour-mm.vercel.app/field-notes)
+
+</div>
