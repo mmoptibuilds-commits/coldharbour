@@ -37,6 +37,11 @@ export const metadata: Metadata = {
     "shipment telemetry",
   ],
   authors: [{ name: SITE.name }],
+
+  verification: {
+    google: "6QLyxg6u_5JMsgwarjjKnyl4enIqV_p84NJtya9bmSc",
+  }, 
+
   openGraph: {
     type: "website",
     locale: SITE.locale,
