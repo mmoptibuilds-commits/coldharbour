@@ -6,10 +6,10 @@ export const SITE = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   locale: "en_GB",
   contact: {
-    email: "hello@coldharbour.example",
-    phone: "+44 20 7946 0112",
+    email: "mmoptibuilds@gmail.com",
+    phone: "+91 78996 20405",
     address: "Sample address for this demonstration build",
-    hours: "Monday to Friday, 08:00 to 18:00 UK time",
+    hours: "Monday to Friday, 08:00 to 18:00",
   },
 } as const;
 
